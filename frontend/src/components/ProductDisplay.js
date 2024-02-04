@@ -6,7 +6,7 @@ import './ProductDisplay.css';
 import Modal from './Modal';
 
 // Import all images from the 'images' directory
-import * as images from '../images/index.js';
+import * as images from '../../public/images/index';
 
 const ProductDisplay = ({ addToCart, number, gender, country, showModal, closeModal }) => {
   const [products, setProducts] = useState([]);
