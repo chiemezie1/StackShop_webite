@@ -8,8 +8,8 @@ import { useUserContext } from '../contexts/UserContext';
 import './Store.css';
 
 const Store = ({ setCartItems }) => {
-  const [country, setCountry] = useState('');
-  const [gender, setGender] = useState('');
+  const [country, setCountry] = useState('USA');
+  const [gender, setGender] = useState('female');
   const { profile } = useUserContext();
   const [showModal, setShowModal] = useState('');
 
