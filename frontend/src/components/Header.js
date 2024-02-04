@@ -7,7 +7,7 @@ import './Header.css';
 const Header = () => {
     const { setProfile } = useContext(UserContext);
     const { isLoading, error, profile, handleLogout } = useAffinidiProfile({
-        authCompleteUrl: 'https://stack-shop-webite-server.vercel.app'
+        authCompleteUrl: '/api/affinidi-auth/complete'
     });  
 
     const [localProfile, setLocalProfile] = useState(null);
@@ -30,7 +30,6 @@ const Header = () => {
     };
 
     const renderLoginState = () => {
-        console.log('cliked me')
         if (isLoading) {
             return <p>Loading...</p>;
         }
