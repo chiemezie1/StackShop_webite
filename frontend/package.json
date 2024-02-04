@@ -20,7 +20,7 @@
     "test": "craco test",
     "eject": "react-scripts eject"
   },
-  "proxy": "",
+  "proxy": "https://stack-shop-webite-server.vercel.app",
   "eslintConfig": {
     "extends": [
       "react-app",

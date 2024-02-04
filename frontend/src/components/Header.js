@@ -30,6 +30,7 @@ const Header = () => {
     };
 
     const renderLoginState = () => {
+        console.log('cliked me')
         if (isLoading) {
             return <p>Loading...</p>;
         }
