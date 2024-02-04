@@ -20,7 +20,7 @@
     "test": "craco test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "",
   "eslintConfig": {
     "extends": [
       "react-app",

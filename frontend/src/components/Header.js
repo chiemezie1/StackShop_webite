@@ -7,7 +7,7 @@ import './Header.css';
 const Header = () => {
     const { setProfile } = useContext(UserContext);
     const { isLoading, error, profile, handleLogout } = useAffinidiProfile({
-        authCompleteUrl: '/api/affinidi-auth/complete'
+        authCompleteUrl: 'https://stack-shop-webite-server.vercel.app'
     });  
 
     const [localProfile, setLocalProfile] = useState(null);
