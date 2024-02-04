@@ -7,8 +7,8 @@ import { useUserContext } from '../contexts/UserContext';
 import './Home.css';
 
 const Home = ({ setCartItems }) => {
-  const [country, setCountry] = useState('');
-  const [gender, setGender] = useState('');
+  const [country, setCountry] = useState('USA');
+  const [gender, setGender] = useState('female');
   const { profile } = useUserContext(); 
 
   useEffect(() => {
