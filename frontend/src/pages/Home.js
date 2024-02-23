@@ -6,7 +6,7 @@ import { useUserContext } from '../contexts/UserContext';
 
 import './Home.css';
 
-const Home = ({ setCartItems }) => {
+const LandingPage: FC =  ({ setCartItems }) => {
   const [country, setCountry] = useState('USA');
   const [gender, setGender] = useState('female');
   const { profile } = useUserContext(); 
@@ -48,4 +48,44 @@ const Home = ({ setCartItems }) => {
   );
 };
 
-export default Home;
+export default LandingPage;
+
+
+
+const AnotherComponent = () => {
+  // Using the useFetchUserInfoQuery hook
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  // Access user information from data
+  const { user } = data;
+
+  console.log('User Object:', user); // Log the user object to the console
+
+  // Render your component with user information
+  return (
+    <div>
+      <h2>User Information</h2>
+      <p>Email: {user?.email || 'N/A'}</p>
+      <p>Country: {user?.country || 'N/A'}</p>
+      <p>Given Name: {user?.givenName || 'N/A'}</p>
+      <p>Family Name: {user?.familyName || 'N/A'}</p>
+      <p>Phone Number: {user?.phoneNumber || 'N/A'}</p>
+      <p>Postal Code: {user?.postalCode || 'N/A'}</p>
+      <p>Street Address: {user?.streetAddress || 'N/A'}</p>
+      <p>Locality: {user?.locality || 'N/A'}</p>
+      <p>Birthdate: {user?.birthdate || 'N/A'}</p>
+    
+
+      {/* Other user details can be accessed similarly */}
+    </div>
+  );
+};
+
+export default AnotherComponent;

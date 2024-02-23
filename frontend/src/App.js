@@ -27,7 +27,7 @@ function App() {
   const closeModal = () => setShowModal(false);
 
   return (
-    <UserContext.Provider value={{ profile: userProfile, setProfile: setUserProfile }}>
+   
       <Router>
         <div className="App">
           <Header />
@@ -51,7 +51,7 @@ function App() {
           <Footer />
         </div>
       </Router>
-    </UserContext.Provider>
+    
   );
 }
 
