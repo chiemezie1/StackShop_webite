@@ -40,7 +40,7 @@ const LogIn: FC = () => {
         </div>
 
         <p className="text-center text-gray-600">
-          Don't have an account yet?
+        {`Don't have an account yet?`}
           <span className="font-bold text-indigo-600 cursor-pointer"> SIGN UP</span>
         </p>
       </div>
