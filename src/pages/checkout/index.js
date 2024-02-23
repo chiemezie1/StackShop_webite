@@ -3,24 +3,13 @@ import { useRouter } from 'next/router';
 import ConfirmationModal from 'src/components/ConfirmationModal/ConfirmationModal';
 import { useFetchUserInfoQuery } from 'src/lib/hooks/use-fetch-user-info-query';
 import CartContext from 'src/context/CartContext';
-import { UserInfo } from 'src/types/types';
 
-interface UserData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  address: string;
-  postalCode: string;
-  city: string;
-  country: string;
-}
+const Checkout = () => {
 
-const Checkout: React.FC = () => {
-  const { clearCart } = useContext(CartContext);
-  const { data, error, isLoading } = useFetchUserInfoQuery<UserInfo>();
-  const [showConfirmationModal, setShowConfirmationModal] = useState<boolean>(false);
-  const [userData, setUserData] = useState<UserData>({
+  const { clearCart  } = useContext(CartContext);
+  const { data, error, isLoading } = useFetchUserInfoQuery();
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+  const [userData, setUserData] = useState({
     firstName: '',
     lastName: '',
     email: '',
@@ -34,20 +23,18 @@ const Checkout: React.FC = () => {
 
   useEffect(() => {
     if (data && data.user) {
-      // Map user data to state, assuming data.user matches UserInfo structure
       setUserData({
-        firstName: data.user.givenName || '',
-        lastName: data.user.familyName || '',
-        email: data.user.email || '',
-        phone: data.user.phoneNumber || '',
-        address: data.user.streetAddress || '',
-        postalCode: data.user.postalCode || '',
-        city: data.user.locality || '',
-        country: data.user.country || ''
+        firstName: data.user.givenName || 'name',
+        lastName: data.user.familyName || 'surname',
+        email: data.user.email || 'email',
+        phone: data.user.phoneNumber || 'phone',
+        address: data.user.streetAddress || 'address',
+        postalCode: data.user.postalCode || 'postalCode',
+        city: data.user.locality || 'locality',
+        country: data.user.country || 'country'
       });
     }
   }, [data]);
-
 
   if (isLoading) {
     return <div>Loading...</div>;

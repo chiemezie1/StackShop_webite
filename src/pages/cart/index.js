@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import CartContext from 'src/context/CartContext'; // Ensure this path matches your file structure
+import CartContext from 'src/context/CartContext';
 import { useFetchUserInfoQuery } from 'src/lib/hooks/use-fetch-user-info-query';
 import * as images from 'src/utils/index';
 
