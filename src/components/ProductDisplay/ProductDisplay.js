@@ -2,11 +2,9 @@ import React, { useEffect, useState } from 'react';
 import generateProducts from 'src/utils/GenerateProducts';
 import Image from 'next/image';
 import * as images from 'src/utils/index';
-import { Product, ProductDisplayProps } from 'src/types/types';
 
-
-const ProductDisplay: React.FC<ProductDisplayProps> = ({ addToCart, number = 2, gender, country }) => {
-  const [products, setProducts] = useState<Product[]>([]);
+const ProductDisplay = ({ addToCart, number = 2, gender , country }) => {
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     // Generate or fetch products based on provided criteria
@@ -16,7 +14,7 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({ addToCart, number = 2, 
 
   return (
     <div className="flex flex-wrap justify-center gap-5 p-5">
-      {products.map((product: Product) => (
+      {products.map((product) => (
         <div key={product.id} className="border border-gray-300 p-4 text-center flex-none w-[250px]">
           <div className="relative h-64 w-full flex justify-center items-center overflow-hidden">
             <Image
@@ -40,3 +38,4 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({ addToCart, number = 2, 
 };
 
 export default ProductDisplay;
+
