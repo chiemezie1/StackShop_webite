@@ -18,6 +18,7 @@ export const authOptions: NextAuthOptions = {
     // defines how JWT is generated and used in session() callback as "token"
     async jwt({ token, account, profile }) {
       const profileItems = (profile as any)?.[PROVIDER_ATTRIBUTES_KEY];
+      console.log("profileItems", profileItems);
       if (profile && profileItems) {
         let userDID: string;
         let user: UserInfo = {};
@@ -39,7 +40,7 @@ export const authOptions: NextAuthOptions = {
           ...(userDID && { userId: userDID }),
         };
       }
-
+      console.log("token", token);
       if (account) {
         token = {
           ...token,
