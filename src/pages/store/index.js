@@ -18,7 +18,7 @@ const Store = () => {
     }
   }, [data]);
 
-  const handleAddToCart = (product : any) => {
+  const handleAddToCart = (product) => {
     addToCart(product);
     setShowModal(true);
   };
