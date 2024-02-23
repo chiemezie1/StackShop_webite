@@ -5,7 +5,6 @@ import { useFetchUserInfoQuery } from 'src/lib/hooks/use-fetch-user-info-query';
 import CartContext from 'src/context/CartContext';
 
 const Checkout = () => {
-
   const { clearCart  } = useContext(CartContext);
   const { data, error, isLoading } = useFetchUserInfoQuery();
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
