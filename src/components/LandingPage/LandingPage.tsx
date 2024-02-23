@@ -1,16 +1,17 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Hero from 'src/components/Hero/Hero';
 import ProductDisplay from 'src/components/ProductDisplay/ProductDisplay';
 import Modal from 'src/components/Modal/Modal';
 import { useFetchUserInfoQuery } from 'src/lib/hooks/use-fetch-user-info-query';
-import CartContext from 'src/context/CartContext';
+import { useCart } from 'src/context/CartContext';
 import SocialProof from 'src/components/SocialProof/SocialProof';
+import { Product } from 'src/types/types'; 
 
-const LandingPage = () => {
-  const { addToCart } = useContext(CartContext);
-  const [country, setCountry] = useState('USA');
-  const [gender, setGender] = useState('female');
-  const [showModal, setShowModal] = useState(false);
+const LandingPage: React.FC = () => {
+  const { addToCart } = useCart();
+  const [country, setCountry] = useState<string>('USA');
+  const [gender, setGender] = useState<string>('female');
+  const [showModal, setShowModal] = useState<boolean>(false);
   
   const { data, error, isLoading } = useFetchUserInfoQuery();
 
@@ -21,7 +22,7 @@ const LandingPage = () => {
     }
   }, [data]);
 
-  const handleAddToCart = (product : any) => {
+  const handleAddToCart = (product: Product) => {
     addToCart(product);
     setShowModal(true);
   };
@@ -46,5 +47,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
-

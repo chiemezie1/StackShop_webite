@@ -8,7 +8,7 @@ const Hero = () => {
       <h2 className="text-6xl text-center font-extrabold text-yellow-600 mb-6">Welcome to StackShop</h2>
       <div className="flex justify-center">
         <div className="w-full md:w-3/4 lg:w-1/2 mb-6">
-          <div className="relative" style={{ paddingTop: '56.25%' }}> {/* Maintain aspect ratio */}
+          <div className="relative" style={{ paddingTop: '56.25%' }}>
             <Image
               src={HeroImage}
               alt="Hero"

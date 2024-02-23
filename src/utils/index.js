@@ -1,4 +1,6 @@
-// src/images/index.js
+// src/utils/index.js
+import { ImageResources } from 'src/types/types';
+
 
 export { default as African_clothes } from '../../public/images/African_clothes.jpg';
 export { default as Black_Polo } from '../../public/images/Black_Polo.jpg';

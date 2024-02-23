@@ -1,9 +1,15 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { CartItem, CartContextValue } from 'src/types/types';
 
-const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+const CartContext = createContext<CartContextValue | undefined>(undefined);
+
+interface CartProviderProps {
+  children: ReactNode;
+}
+
+export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
     try {
@@ -16,7 +22,7 @@ export const CartProvider = ({ children }) => {
     }
   }, []);
 
-  const addToCart = (product) => {
+  const addToCart = (product: CartItem) => {
     setCartItems((prevItems) => {
       const itemIndex = prevItems.findIndex((item) => item.id === product.id);
       const updatedItems = [...prevItems];
@@ -33,7 +39,7 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  const removeFromCart = (productId) => {
+  const removeFromCart = (productId: string) => {
     setCartItems((prevItems) => {
       const updatedItems = prevItems.filter((item) => item.id !== productId);
       sessionStorage.setItem('cart', JSON.stringify(updatedItems));
@@ -55,6 +61,15 @@ export const CartProvider = ({ children }) => {
       {children}
     </CartContext.Provider>
   );
+};
+
+
+export const useCart = (): CartContextValue => {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error('useCart must be used within a CartProvider');
+  }
+  return context;
 };
 
 export default CartContext;

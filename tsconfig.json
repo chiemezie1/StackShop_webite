@@ -16,6 +16,6 @@
     "incremental": true,
     "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/ConfirmationModal/ConfirmationModal.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/ConfirmationModal/ConfirmationModal.js", "src/utils/GenerateProducts.js", "src/utils/index.js"],
   "exclude": ["node_modules"]
 }
