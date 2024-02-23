@@ -1,0 +1,35 @@
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/lato/700.css";
+@import "@fontsource/lato/400.css";
+@import "@fontsource/lora/400.css";
+@import "@fontsource/lora/700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  height: 100%;
+  font-size: 8px;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-size: 2rem;
+  font-family: "lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  animation: slide 30s linear infinite;
+}
