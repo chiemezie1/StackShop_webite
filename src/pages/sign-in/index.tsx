@@ -1,9 +1,9 @@
-import { FC } from "react";
+
 import Image from "next/image";
 import LogoAffinidi from "public/images/logo-affinidi.svg";
 import { clientLogin } from "src/lib/auth/client-login";
 
-const LogIn: FC = () => {
+const LogIn = () => {
   return (
     <div className="min-h-screen mx-auto flex justify-center items-center bg-gray-100 p-4" style={{ maxWidth: '1200px' }}>
       <div className="bg-white shadow-2xl rounded-lg max-w-2xl w-full p-8 space-y-6">
