@@ -1,7 +1,7 @@
 import products from './productsData';
-import { Product } from 'src/types/types';
 
-export const generateProducts = (numItems: number, gender: string, country: string): Product[] => {
+const generateProducts = (numItems, gender, country) => {
+  // Filter products based on gender and country
   const filteredProducts = products.filter(
     (product) => product.gender === gender && product.nationality.toLowerCase() === country.toLowerCase()
   );
