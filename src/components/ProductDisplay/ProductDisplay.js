@@ -3,7 +3,7 @@ import generateProducts from 'src/utils/GenerateProducts';
 import Image from 'next/image';
 import * as images from 'src/utils/index';
 
-const ProductDisplay = ({ addToCart, number = 2, gender , country }) => {
+const ProductDisplay = ({ addToCart, number = 2, gender, country }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {

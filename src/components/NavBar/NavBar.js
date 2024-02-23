@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
@@ -6,7 +6,7 @@ import IconPersonFilled from "public/images/icon-person-filled.svg";
 
 import { useAuthentication } from "src/lib/hooks/use-authentication";
 
-const NavBar: FC = () => {
+const NavBar = () => {
   const [confirmLogOut, setConfirmLogOut] = useState(false);
   const { user, isAuthenticated, isLoading } = useAuthentication();
 
