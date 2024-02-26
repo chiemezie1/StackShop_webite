@@ -3,6 +3,7 @@ import Link from "next/link";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
 import IconPersonFilled from "public/images/icon-person-filled.svg";
+import cart from "../../../public/cart.png"
 
 import { useAuthentication } from "src/lib/hooks/use-authentication";
 
@@ -63,6 +64,11 @@ const NavBar = () => {
             </div>
           )}
         </div>
+        <nav>
+        <Link href="/cart" passHref>
+          <Image src={cart} alt="Cart" height={15} width={25}/>
+        </Link>
+      </nav>
       </div>
     </nav>
   );
