@@ -64,11 +64,11 @@ const NavBar = () => {
             </div>
           )}
         </div>
-        <nav>
+        <div className="pl-8">
         <Link href="/cart" passHref>
           <Image src={cart} alt="Cart" height={15} width={25}/>
         </Link>
-      </nav>
+      </div>
       </div>
     </nav>
   );
